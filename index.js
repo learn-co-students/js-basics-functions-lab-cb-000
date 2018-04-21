@@ -13,3 +13,14 @@ function distanceFromHqInBlocks(blockNumber ) {
 function distanceFromHqInFeet(blockNumber) {
   return distanceFromHqInBlocks(blockNumber) * 264;
 }
+
+// returns the distance travelled in feet
+// Calculates the number of feet a passenger travels given a starting block and an ending block - it only calculates distance North and South (uptown/downtown).
+// It uses the knowledge that a block is 264 feet long.
+function distanceTravelledInFeet(start, destination) {
+  let result = Math.abs(start - destination) * 264;
+  // console.log('start:', start);
+  // console.log('dest: ', destination);
+  // console.log('result: ', result);
+  return result;
+}
