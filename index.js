@@ -24,3 +24,20 @@ function distanceTravelledInFeet(start, destination) {
   // console.log('result: ', result);
   return result;
 }
+
+// gives customers a free sample
+// charges 2 cents per foot when total feet travelled is between 400 and 2000 (remember the first 400 feet are free!)
+// charges 25 dollars for a distance over 2000 feet
+// does not allow rides over 2500 feet
+function calculatesFarePrice(start, destination) {
+  let feet = distanceTravelledInFeet(start, destination);
+  if (feet <= 400) {
+    return 0;
+  } else if (feet > 400 && feet <= 2000) {
+    return (feet - 400) * 0.02;
+  } else if (feet > 2000 && feet < 2500) {
+    return 25;
+  } else {
+    return 'cannot travel that far';
+  }
+}
